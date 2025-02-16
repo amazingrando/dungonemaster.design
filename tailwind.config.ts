@@ -58,9 +58,14 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
   	extend: {
+      animation: {
+        comeInOut: 'comeInOut 700ms forwards;',
+        spin: 'spin 1000ms linear forwards',
+      },
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
@@ -112,6 +117,19 @@ export default {
 			fontFamily: {
         base: ['GeneralSans-Variable', 'system-ui', 'sans-serif'],
       },
+      keyframes: {
+        comeInOut: {
+          '0%, 100%': { transform: 'scale(0)' },
+          '50%': { transform: 'scale(1)' },
+        },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(180deg)' },
+        }
+      },
+      zIndex: {
+        'header': '100',
+      }
   	}
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports

@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="antialiased font-base px-8 py-4 text-slate-700"
+        className="antialiased font-base px-16 py-8 text-slate-700 space-y-16"
       >
         <Header />
         {children}
