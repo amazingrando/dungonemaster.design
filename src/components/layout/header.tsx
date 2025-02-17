@@ -2,6 +2,7 @@ import { NavPrimary } from "./navPrimary";
 import Randy from '@/assets/images/randy.png'
 import Image from "next/image";
 import Link from "next/link";
+import { Emphasis } from "../graphics/emphasis";
 
 const Header = () => {
   return (
@@ -13,7 +14,13 @@ const Header = () => {
           className="w-[4rem] h-[4rem] -ml-[0.7rem]"
         />
         <div>
-          <h1 className="uppercase text-2xl font-bold">Amazing Rando</h1>
+          <h1 className="uppercase text-2xl font-bold">
+            <span>
+              <Emphasis className="w-[6rem] h-[1.5rem] text-blue-600" />
+              Amazing
+            </span>
+            Rando
+          </h1>
           <p className="text-sm font-medium">Crafting digital experiences worthy of legend.</p>
         </div>
       </Link> 
