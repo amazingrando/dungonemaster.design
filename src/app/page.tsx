@@ -31,7 +31,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="px-16 py-8 mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+        <div className="px-16 py-8 mt-16 items-center grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <Testimonial key={index} {...testimonial} />
           ))}
