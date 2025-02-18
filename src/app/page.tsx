@@ -1,10 +1,12 @@
+'use client';
+
 import Sparkles from '@/lib/sparkle';
 import Squiggle from '@/components/graphics/squiggle';
 import Link from 'next/link';
-import { Testimonial, testimonials } from '@/components/ui/testimonials';
 import Framed from '@/assets/images/framed.png';
 import Image from 'next/image';
 import SkillsCard from '@/components/ui/SkillsCard';
+import TestimonialsGrid from '@/components/layout/testimonials';
 
 export default function Home() {
   return (
@@ -31,11 +33,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="px-16 py-8 mt-16 items-center grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Testimonial key={index} {...testimonial} />
-          ))}
-        </div>
+        <TestimonialsGrid />
 
         <div className="mt-16 ps-16 pb-32 bg-blue-700 min-h-[700px] text-blue-100">
           <Image src={Framed} alt="Framed" className="w-full h-auto max-w-[800px] float-end" />
@@ -56,7 +54,7 @@ export default function Home() {
             <SkillsCard
               className="mt-16"
               title="Design systems for scalable, cohesive experiences"
-              description="Great design systems give teams confidence and clarity. I build flexible, accessible systems that bridge design and development for a seamless workflow. Whether you need a new system, a refresh, or better adoption, I’ll help you create a system that works—so you can focus on creating, not reinventing."
+              description="Great design systems give teams confidence and clarity. I build flexible, accessible systems that bridge design and development for a seamless workflow. Whether you need a new system, a refresh, or better adoption, I'll help you create a system that works—so you can focus on creating, not reinventing."
             />
           </ul>
         </div>

@@ -1,15 +1,22 @@
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+'use client';
 
-type TestimonialProps = {
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { useEffect, useRef } from 'react';
+import { annotate } from 'rough-notation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+
+interface TestimonialProps {
+  style?: React.CSSProperties;
   quote: string;
   author: string;
   role: string;
   avatar: string;
   linkedin: string;
-};
+}
 
 // Testimonial data
-export const testimonials: TestimonialProps[] = [
+const testimonials: TestimonialProps[] = [
   {
     quote: "<span class='highlight'>Working with Rando is like using a mac:</span> it just works the way that you would have expected even if you weren't aware of the expectation.",
     author: "Patrick Bagwell",
@@ -18,7 +25,7 @@ export const testimonials: TestimonialProps[] = [
     linkedin: "https://linkedin.com/in/patrick-bagwell"
   },
   {
-    quote: "Randy is <span class='circle'>great with clients</span>, delivers designs that are admired, can be relied upon in stressful situations to bring calm, and is great in a sales pitch!",
+    quote: "Randy is <span class='highlight'>great with clients</span>, delivers designs that are admired, can be relied upon in stressful situations to bring calm, and is great in a sales pitch!",
     author: "Suzy Bates",
     role: "Senior Program Manager for Marketing Strategy at Cloudflare, Inc.",
     avatar: "/images/avatars/suzybates.jpg",
@@ -32,21 +39,21 @@ export const testimonials: TestimonialProps[] = [
     linkedin: "https://linkedin.com/in/scott-bell"
   },
   {
-    quote: "Collaborating with Randy on major website design projects <span class='circle'>is always</span> an excellent experience. His designs are effective, not just beautiful.",
+    quote: "Collaborating with Randy on major website design projects <span class='highlight'>is always an excellent experience</span>. His designs are effective, not just beautiful.",
     author: "Grace Stoeckle",
     role: "Staff UX Researcher at Fanatics, Inc.",
     avatar: "/images/avatars/gracestoeckle.jpg",
     linkedin: "https://linkedin.com/in/grace-stoeckle"
   },
   {
-    quote: "Randy does a great job at both allowing me the autonomy I needed to run my project, but also stepped in to offer support and helpful feedback when needed. Randy is always positive, helpful, and professional. I would be thrilled to work with him again.",
+    quote: "Randy does a great job at both <span class='highlight'>allowing me the autonomy I needed</span> to run my project, but also stepped in to offer support and helpful feedback when needed.",
     author: "Nica Lorber",
     role: "Strategy and Design Consultant",
     avatar: "/images/avatars/nicalorber.jpg",
     linkedin: "https://www.linkedin.com/in/nicalorber"
   },
   {
-    quote: "Randy [as a leader] makes space for people to thrive on their own. Whenever I ever felt stuck, I could count on Randy to guide me to an answer.",
+    quote: "Randy [as a leader] makes space for people to thrive on their own. <span class='highlight'>Whenever I ever felt stuck, I could count on Randy to guide me to an answer.</span>",
     author: "Ashley Hitson",
     role: " Lead UI/UX Designer | Accessibility Advocate",
     avatar: "/images/avatars/ashleyhitson.jpg",
@@ -54,11 +61,45 @@ export const testimonials: TestimonialProps[] = [
   }
 ];
 
-export function Testimonial({ quote, author, role, avatar, linkedin }: TestimonialProps) {
+// Change default export to named export
+export { testimonials };
+
+export function Testimonial({ quote, author, role, avatar, linkedin, style }: TestimonialProps) {
+  const quoteRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (quoteRef.current) {
+      const highlights = quoteRef.current.querySelectorAll('.highlight');
+
+      highlights.forEach((highlight) => {
+        const annotation = annotate(highlight as HTMLElement, {
+          type: 'highlight',
+          color: '#fed7aa',
+          animationDuration: 800,
+          multiline: true,
+        });
+        annotation.show();
+      });
+    }
+  }, []);
+
   return (
-    <div className="flex flex-col gap-4 p-6 bg-white rounded-lg">
-      <p className="text-xl [&>mark]:bg-orange-200 [&>mark]:absolute [&>mark]:-z-10 [&>mark]:w-[0%] [&>mark]:transition-all [&>mark]:rounded-md [&>mark]:px-1 [&>mark]:py-0.5 hover:[&>mark]:w-[100%]" dangerouslySetInnerHTML={{ __html: quote }} />
-      <div className="flex items-center gap-3">
+    <div 
+      className="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-lg" 
+      style={{ ...style }}
+    >
+      <div>
+        <FontAwesomeIcon 
+          icon={faQuoteLeft} 
+          className="text-ash-600 w-6 h-6"
+        />
+        <p 
+          ref={quoteRef}
+          className="text-xl relative" 
+          dangerouslySetInnerHTML={{ __html: quote }}
+        />
+      </div>
+      <div className="flex items-center gap-3 -ml-1">
         <Avatar>
           <AvatarImage src={avatar} alt={author} />
           <AvatarFallback>{author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
