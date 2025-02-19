@@ -1,14 +1,10 @@
 import Sparkles from '@/lib/sparkle';
-import Squiggle from '@/components/graphics/squiggle';
 import Link from 'next/link';
 
 export default function HomeHero() {
   return (
-    <div className='px-16 py-8 flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-6xl relative'>
-      <Squiggle 
-        className="absolute -top-[0rem] -left-4 -z-10 text-white"
-      />
-      <h1 className="text-7xl font-medium text-balance">
+    <div className='px-16 py-8 flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-8xl relative'>
+      <h1 className="text-8xl font-medium text-balance">
         Crafting digital experiences{" "} 
         <Sparkles 
           maxSparkles={3} 

@@ -6,10 +6,10 @@ import { faArrowUpRight } from '@fortawesome/pro-regular-svg-icons';
 
 export default function Skills() {
   return (
-    <div className="mt-16 ps-16 pb-32 bg-blue-700 min-h-[700px] text-blue-100">
+    <div className="mt-16 ps-16 bg-blue-700 min-h-[700px] text-blue-100">
       <Image src={Framed} alt="Framed" className="w-full h-auto max-w-[60%] float-end" />
       <h2 className="text-6xl font-medium text-balance max-w-4xl leading-normal pt-64">
-        <span className="text-8xl">Lead.<br/> Design.<br/> Storytell.<br/></span> Elevate Your Digital Experience.
+        <span className="text-8xl">Leader.<br/> Designer.<br/> Storyteller.<br/></span> Elevate Your Digital Experience.
       </h2>
 
       <ul className="skills-card-grid gap-4 mt-16 pe-16">
