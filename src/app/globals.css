@@ -77,4 +77,27 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .skills-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px 1fr;
+    grid-template-areas: 
+      ". . . four"
+      ". . three four"
+      ". two three four"
+      "one two three four";
+  }
+  .skills-1 {
+    grid-area: one;
+  }
+  .skills-2 {
+    grid-area: two;
+  }
+  .skills-3 {
+    grid-area: three;
+  }
+  .skills-4 {
+    grid-area: four;
+  }
+
 }

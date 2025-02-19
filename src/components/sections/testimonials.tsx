@@ -1,6 +1,7 @@
 'use client';
 
-import { Testimonial, testimonials } from '@/components/ui/testimonials';
+import { Testimonial } from '@/components/ui/testimonials';
+import { testimonials } from '@/data/testimonials';
 
 export default function TestimonialsGrid() {
   return (
@@ -16,7 +17,7 @@ export default function TestimonialsGrid() {
           <Testimonial 
             key={index} 
             {...testimonial} 
-            style={{ transform: `rotate(${adjustedRotation}deg)` }}
+            rotation={adjustedRotation}
           />
         );
       })}
