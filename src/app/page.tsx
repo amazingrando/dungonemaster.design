@@ -8,9 +8,9 @@ import Portfolio from '@/components/sections/portfolio';
 export default function Home() {
   return (
       <main className="">
-        <HomeHero />
+        {/* <HomeHero />
         <TestimonialsGrid />
-        <Skills />
+        <Skills /> */}
         <Logos />
         <Portfolio />
       </main>
