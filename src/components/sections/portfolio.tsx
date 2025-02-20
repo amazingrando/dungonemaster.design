@@ -1,11 +1,9 @@
-import yalesites from '@/assets/images/portfolio/yalesites.jpg';
-
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/pro-regular-svg-icons';
 import { projects, smallerProjects } from '@/data/projects';
 import Link from 'next/link';
-
+import classNames from 'classnames';
 interface ProjectCardProps {
   title: string;
   role: string;
@@ -21,23 +19,33 @@ const ProjectCard = ({
   description,
   imageSrc,
   url = '/',
+  size = 'default',
 }: ProjectCardProps) => (
   <article
     className="md:flex md:flex-row md:gap-8 items-start"
   >
     <Link
       href={url}
-      className="md:shrink-0 md:grow-0 md:basis-[150px] float-end md:float-none"
+      className={classNames({
+        'md:basis-[150px] ': size === 'default',
+        'md:basis-[100px]': size === 'small'
+      }, 'md:shrink-0 md:grow-0 float-end md:float-none')}
     >
       <Image
         src={imageSrc}
         alt={title}
-        className="max-w-[100px] w-[100px] md:max-w-[150px] md:w-full"
+        className={classNames({
+          'max-w-[100px] w-[100px] md:max-w-[150px]': size === 'default',
+          'max-w-[70px] w-[70px] md:max-w-[100px]': size === 'small'
+        }, 'md:w-full')}
       />
     </Link>
 
     <div>
-      <h2 className="text-2xl font-semibold mb-2 leading-tight text-balance group">
+      <h2 className={classNames({
+        'text-2xl font-semibold mb-2 leading-tight text-balance group': size === 'default',
+        'text-xl font-semibold mb-2 leading-tight text-balance group': size === 'small'
+      })}>
         <Link href={url} className="transition-all group-hover:text-blue-200">
           {title}{' '}
           <FontAwesomeIcon
@@ -73,9 +81,9 @@ const Portfolio = () => {
         <h2 className="text-3xl font-semibold mb-12 bg-gradient-to-r from-blue-100 to-blue-200 text-transparent bg-clip-text">
           Hobby projects
         </h2>
-        <section className="grid grid-cols-1 gap-12 max-w-[800px]">
+        <section className="grid grid-cols-3 gap-12">
           {smallerProjects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+            <ProjectCard key={project.title} {...project} size="small" />
           ))}
         </section>
       </div>

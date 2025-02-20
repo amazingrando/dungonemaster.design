@@ -20,6 +20,14 @@ export const projects = [
     url: '/projects/yale-ds',
   },
   {
+    title: 'Wu Tsai Institute design lost a Webby to Spotify',
+    role: 'Creative Director',
+    description:
+    'Connecting neuroscience and data science to accelerate breakthroughs in understanding cognition.',
+    imageSrc: wutsai,
+    url: 'projects/wti',
+  },
+  {
     title:
       'Emulsify is the go-to design system solution for hundreds of designer and developer teams working on Drupal sites',
     role: 'Product Lead',
@@ -29,14 +37,6 @@ export const projects = [
     url: '/projects/emulsify',
   },
   {
-    title: 'Wu Tsai Institute design lost a Webby to Spotify',
-    role: 'Creative Director',
-    description:
-      'Connecting neuroscience and data science to accelerate breakthroughs in understanding cognition.',
-    imageSrc: wutsai,
-    url: 'projects/wti',
-  },
-  {
     title: 'Reinventing the public health paradigm with NYU',
     role: 'Designer',
     description:
@@ -44,34 +44,42 @@ export const projects = [
     imageSrc: nyu,
     url: '/projects/nyu',
   },
-  {
-    title: 'Yale Cybersecurity—make boring things exciting',
-    role: 'Designer',
-    description:
-      'Making a department of NO into a department of KNOW. Cybersecurity is cool!',
-    imageSrc: cyber,
-    url: 'projects/cybersecurity',
-  },
-  {
-    title:
-      'Bits and Mortar ensures that every tabletop game store can deliver files to their customers',
-    role: 'Owner, Product Designer, and Developer',
-    description:
-      'When someone buys a tabletop roleplaying game—like Dungeons and Dragons—from any local game store worldwide, we send them a PDF.',
-    imageSrc: bnm,
-    url: 'projects/bits-and-mortar',
-  },
-  {
+  // {
+  //   title: 'Yale Cybersecurity—make boring things exciting',
+  //   role: 'Designer',
+  //   description:
+  //     'Making a department of NO into a department of KNOW. Cybersecurity is cool!',
+  //   imageSrc: cyber,
+  //   url: 'projects/cybersecurity',
+  // },
+  // {
+  //   title:
+  //     'Bits and Mortar ensures that every tabletop game store can deliver files to their customers',
+  //   role: 'Owner, Product Designer, and Developer',
+  //   description:
+  //     'When someone buys a tabletop roleplaying game—like Dungeons and Dragons—from any local game store worldwide, we send them a PDF.',
+  //   imageSrc: bnm,
+  //   url: 'projects/bits-and-mortar',
+  // },
+  // {
+  //   title: 'Design in Good Company podcast',
+  //   role: 'Host',
+  //   description:
+  //     'A podcast about design, leadership, and the power of community.',
+  //   imageSrc: podcast,
+  //   url: 'projects/podcast',
+  // },
+];
+
+export const smallerProjects = [
+   {
     title: 'Design in Good Company podcast',
     role: 'Host',
     description:
       'A podcast about design, leadership, and the power of community.',
     imageSrc: podcast,
-    url: 'projects/podcast',
+    url: 'https://designingoodcompany.com',
   },
-];
-
-export const smallerProjects = [
   {
     title: 'Figma plugin: Export Color Variables for Tailwind',
     role: 'Creator',
