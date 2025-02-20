@@ -3,8 +3,6 @@ import Randy from '@/assets/images/randy.png'
 import Image from "next/image";
 import Link from "next/link";
 import { Emphasis } from "../graphics/emphasis";
-import headerFrame from '@/assets/images/header/header-frame.png'
-import headerPhoto from '@/assets/images/header/header-photo.jpg'
 
 const Header = () => {
   return (

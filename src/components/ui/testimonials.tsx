@@ -17,11 +17,6 @@ export interface TestimonialProps {
   rotation?: number;
 }
 
-interface PinProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
 export function Testimonial({ quote, author, role, avatar, linkedin, style, rotation = 0 }: TestimonialProps) {
   const quoteRef = useRef<HTMLDivElement>(null);
 

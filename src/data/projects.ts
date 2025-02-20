@@ -1,9 +1,9 @@
-import cyber from '@/assets/images/projects/cyber.png';
+// import cyber from '@/assets/images/projects/cyber.png';
 import emulsify from '@/assets/images/projects/emulsify.png';
 import podcast from '@/assets/images/projects/podcast.png';
 import wutsai from '@/assets/images/projects/wutsai.png';
 import bitd from '@/assets/images/projects/bitd.png';
-import bnm from '@/assets/images/projects/bnm.png';
+// import bnm from '@/assets/images/projects/bnm.png';
 import fate from '@/assets/images/projects/fate.png';
 import yaleds from '@/assets/images/projects/yaleds.png';
 import exportColors from '@/assets/images/projects/export-colors.png';

@@ -5,7 +5,7 @@ interface SkillsCardProps {
   className?: string;
 }
 
-export default function SkillsCard({ title, description, subhead, className }: SkillsCardProps) {
+export default function SkillsCard({ title, description, className }: SkillsCardProps) {
   return (
     <div className={`bg-blue-800 p-6 space-y-4 ${className || ''}`}>
       <h3 className="text-3xl font-semibold text-balance">{title}</h3>

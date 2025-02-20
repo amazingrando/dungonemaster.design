@@ -69,7 +69,7 @@ const Portfolio = () => {
         </h2>
 
         <div className="bg-yellow-500 flex flex-row gap-4 construction-pattern px-8 py-2 mb-16 rounded-lg">
-          <p className='bg-yellow-500 px-8 py-4 rounded-lg text-black font-semibold mx-auto text-2xl'>I'm in the process of updating my portfolio, so there are some rough edges. Updates daily.</p>
+          <p className='bg-yellow-500 px-8 py-4 rounded-lg text-black font-semibold mx-auto text-2xl'>I&apos;m in the process of updating my portfolio, so there are some rough edges. Updates daily.</p>
         </div>
 
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24 mb-24">
