@@ -11,7 +11,7 @@ export default async function Page({
   const frontmatter = content.frontmatter
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto px-8 md:px-8 lg:px-16">
       <header className="max-w-4xl">
         <h1 className="text-4xl md:text-6xl font-semibold mb-4 text-balance">
           {frontmatter.title}
@@ -43,7 +43,7 @@ export default async function Page({
           </nav>
         )}
       </header>
-      <main className="prose lg:prose-lg prose-headings:font-semibold prose-strong:text-slate-600 prose-headings:text-slate-700 prose-li:marker:text-slate-600 mt-44 pb-44">
+      <main className="prose lg:prose-lg prose-headings:font-semibold prose-strong:text-slate-600 prose-headings:text-slate-700 prose-li:marker:text-slate-600 mt-24 lg:mt-44 pb-44">
         <Content />
       </main>
     </div>

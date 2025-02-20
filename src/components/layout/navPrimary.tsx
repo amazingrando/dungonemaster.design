@@ -52,9 +52,9 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function NavPrimary() {
+export function NavPrimary({ className }: { className?: string }) {
   return (
-    <NavigationMenu>
+    <NavigationMenu className={className}>
       <NavigationMenuList>
         <NavigationMenuItem >
           <NavigationMenuTrigger>My Work</NavigationMenuTrigger>

@@ -15,9 +15,10 @@ export interface TestimonialProps {
   avatar: string;
   linkedin: string;
   rotation?: number;
+  className?: string;
 }
 
-export function Testimonial({ quote, author, role, avatar, linkedin, style, rotation = 0 }: TestimonialProps) {
+export function Testimonial({ quote, author, role, avatar, linkedin, style, rotation = 0, className = '' }: TestimonialProps) {
   const quoteRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export function Testimonial({ quote, author, role, avatar, linkedin, style, rota
 
   return (
     <div 
-      className="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-lg" 
+      className={`flex flex-col gap-4 p-6 bg-white rounded-lg shadow-lg ${className}`}
       style={{ 
         ...style,
         transform: rotation ? `rotate(${rotation}deg)` : undefined
@@ -66,12 +67,12 @@ export function Testimonial({ quote, author, role, avatar, linkedin, style, rota
         />
         <blockquote 
           ref={quoteRef}
-          className="text-xl relative" 
+          className="text-sm md:text-base lg:text-xl relative" 
           dangerouslySetInnerHTML={{ __html: quote }}
         />
       </div>
-      <footer className="flex items-center gap-3 -ml-1">
-        <Avatar>
+      <footer className="flex items-center gap-2 md:gap-3 -ml-1">
+        <Avatar className="w-8 h-8 md:w-10 md:h-10">
           <AvatarImage src={avatar} alt={`${author}'s profile picture`} />
           <AvatarFallback>{author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
         </Avatar>
@@ -80,12 +81,12 @@ export function Testimonial({ quote, author, role, avatar, linkedin, style, rota
             href={linkedin} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="font-medium text-balance hover:text-blue-600"
+            className="text-sm lg:text-base font-medium text-balance hover:text-blue-600"
             aria-label={`${author}'s LinkedIn profile`}
           >
             {author}
           </a>
-          <p className="text-sm text-ash-700 text-balance">{role}</p>
+          <p className="text-xs lg:text-sm text-ash-700 text-balance">{role}</p>
         </div>
       </footer>
     </div>

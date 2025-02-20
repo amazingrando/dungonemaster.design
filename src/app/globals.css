@@ -87,18 +87,21 @@ body {
       ". two three four"
       "one two three four";
   }
-  .skills-1 {
-    grid-area: one;
+  @media (min-width: 1024px) { 
+    .skills-1 {
+      grid-area: one;
+    }
+    .skills-2 {
+      grid-area: two;
+    }
+    .skills-3 {
+      grid-area: three;
+    }
+    .skills-4 {
+      grid-area: four;
+    }
   }
-  .skills-2 {
-    grid-area: two;
-  }
-  .skills-3 {
-    grid-area: three;
-  }
-  .skills-4 {
-    grid-area: four;
-  }
+  
   .construction-pattern {
     @apply bg-yellow-600;
     background-image: repeating-linear-gradient(45deg, transparent, transparent 13px, black 13px, black 26px);

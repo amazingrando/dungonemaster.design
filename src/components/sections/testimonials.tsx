@@ -5,7 +5,7 @@ import { testimonials } from '@/data/testimonials';
 
 export default function TestimonialsGrid() {
   return (
-    <div className="px-16 py-8 mt-16 items-center grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="px-8 py-4 md:px-16 md:py-8 mt-16 items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {testimonials.map((testimonial, index) => {
         const rotation = Math.random() * 3 - 1.5;
         const adjustedRotation = 
@@ -18,6 +18,7 @@ export default function TestimonialsGrid() {
             key={index} 
             {...testimonial} 
             rotation={adjustedRotation}
+            className={index >= 3 ? 'hidden md:flex' : ''}
           />
         );
       })}
